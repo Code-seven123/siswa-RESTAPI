@@ -7,8 +7,8 @@ public_path = File.expand_path("./public")
 set :public_folder, public_path
 
 use AllMiddleware
-run CreateController
-run DeleteController
+run CreateController.new
+run DeleteController.new
 puts "Daftar Rute Aktif:"
-puts CreateController.routes.inspect
-puts DeleteController.routes.inspect
+puts CreateController.inspect
+puts DeleteController.inspect

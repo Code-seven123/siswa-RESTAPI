@@ -3,7 +3,7 @@ require "json"
 require "uri"
 # Data yang akan dikirim dalam format JSON
 data = {
-  nis: "123253",
+  nis: "123257",
   nama: "John",
   jurusan: "Teknik Informatika",
   alamat: "Jl. Contoh No. 123",
