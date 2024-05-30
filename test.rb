@@ -10,7 +10,7 @@ data = {
   kelas: 11
 }
 # URL yang dituju
-url = "http://localhost:9292/siswa"#ByNis?#{URI.encode_www_form(data)}"
+url = "http://localhost:4567/siswa"#ByNis?#{URI.encode_www_form(data)}"
 
 # Melakukan permintaan PUT dengan data yang diberikan
 response = HTTParty.put(url, body: data.to_json, headers: { 'Content-Type' => 'application/json' })
