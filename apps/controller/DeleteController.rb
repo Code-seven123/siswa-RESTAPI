@@ -4,10 +4,10 @@ require_relative "../models/siswa"
 require "json"
 
 class DeleteController < Sinatra::Base
-  delete "/siswa/dn/:nis" do |nis|
+  delete "/siswa/dn/:nis" do
     begin
       nisValidate = NisValidator.new
-      result = nisValidate.call(nis: nis.to_i)
+      result = nisValidate.call(nis: params[:nis].to_i)
       if result.success?
         siswa = Siswa.where(nis: result[:nis])
         if siswa.empty?
@@ -16,7 +16,7 @@ class DeleteController < Sinatra::Base
         else
           status 200
           siswa.delete
-          { msg: "Succes delete data", data: result }.to_json
+          { msg: "Succes delete data" }.to_json
         end
       else
         status 422
@@ -29,7 +29,6 @@ class DeleteController < Sinatra::Base
   end
   delete "/siswa/d/:id" do |id|
     begin
-      puts id
       if id
         siswa = Siswa.where(id: id.to_i)
         if siswa.empty?
@@ -38,7 +37,7 @@ class DeleteController < Sinatra::Base
         else
           status 200
           siswa.delete
-          { msg: "Succes delete data", data: siswa.to_h }.to_json
+          { msg: "Succes delete data" }.to_json
         end
       else
         status 422

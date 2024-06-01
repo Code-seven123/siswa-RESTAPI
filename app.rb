@@ -8,6 +8,7 @@ end
 class Main < Sinatra::Base
   use CreateController
   use DeleteController
+  use SearchController
   use AllMiddleware
 
   run! if app_file == $0
