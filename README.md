@@ -114,6 +114,9 @@ Mencari data siswa berdasarkan jurusan.
 
 Memperbarui data siswa berdasarkan ID.
 
+**Request Body**
+- Data siswa baru dalam format JSON.
+
 **Request Parameters**
 - `:id` (Path Parameter): ID siswa yang akan diperbarui.
 
