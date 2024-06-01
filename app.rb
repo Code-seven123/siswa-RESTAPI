@@ -5,6 +5,8 @@ Dir["./apps/controller/*.rb"].each do |file|
   require_relative text
 end
 
+FileUtils.mkdir_p("./temp")
+
 class Main < Sinatra::Base
   use CreateController
   use DeleteController
